@@ -42,7 +42,7 @@ TESTS=$(patsubst %.c,%,$(TEST_SRC))
 #The ultimate target is build/libYOUR_LIBRARY.a,
 #which you will change to be whatever library
 #you are trying to build
-TARGET=build/libYOUR_LIBRARY.a
+TARGET=build/simple_test_lib.a
 SO_TARGET=$(patsubst %.a,%.so,$(TARGET))
 
 #The Target Build
@@ -66,7 +66,7 @@ dev: all
 #trick from before, giving a target with just options and ways to alter
 #them for this run. In this case, I'm adding -fPIC just for the library
 #build, using the += syntax to add it on.
-$(TARGET):CFLGAS+=-fPIC
+$(TARGET):CFLAGS+=-fPIC
 #this is the real target, where we make the build directory, then
 #compile all of the OBJECTS
 $(TARGET):build $(OBJECTS)

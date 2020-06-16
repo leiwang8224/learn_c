@@ -1,0 +1,10 @@
+#compile the lib file and make the .so
+#you may need -fPIC here on some platforms, add that if you get an error
+cc -c simple_test_lib.c -o simple_test_lib.o
+cc -shared -o simple_test_lib.so simple_test_lib.o
+
+#make the loader program
+cc -Wall -g -DNDEBUG simple_test.c -ldl -o simple_test
+
+#try it out with some things that work
+simple_test ./simple_test.so print_a_message "hello there"
