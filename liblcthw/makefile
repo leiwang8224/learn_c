@@ -42,7 +42,7 @@ TESTS=$(patsubst %.c,%,$(TEST_SRC))
 #The ultimate target is build/libYOUR_LIBRARY.a,
 #which you will change to be whatever library
 #you are trying to build
-TARGET=build/simple_test_lib.a
+TARGET=build/liblcthw.a
 SO_TARGET=$(patsubst %.a,%.so,$(TARGET))
 
 #The Target Build
