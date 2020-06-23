@@ -53,7 +53,7 @@ error:
 static char *test_operations() {
 	size_t N = 200;
 	
-	RadixMap *map = RadixMap_Create(N);
+	RadixMap *map = RadixMap_create(N);
 	mu_assert(map != NULL, "failed to make the map");
 	mu_assert(make_random(map), "didn't make a random fake radix map");
 	RadixMap_sort(map);

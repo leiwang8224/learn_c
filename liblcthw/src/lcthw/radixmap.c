@@ -30,7 +30,7 @@ void RadixMap_destroy(RadixMap *map) {
 	}
 }
 
-#define Byteof(x,y) (((uint8_t *)x)[(y)])
+#define ByteOf(x,y) (((uint8_t *)x)[(y)])
 
 static inline void radix_sort(short offset, uint64_t max, uint64_t *source, uint64_t *dest) {
 	uint64_t count[256] = {0};

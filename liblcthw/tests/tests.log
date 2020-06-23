@@ -1,0 +1,26 @@
+----
+RUNNING: tests/darray_algos_tests
+ALL TESTS PASSED
+Tests run: 3
+----
+RUNNING: tests/darray_tests
+ALL TESTS PASSED
+Tests run: 8
+INT: 100
+FLOAT: 100.339996
+STRING: YO DUDE!
+INT: 200
+FLOAT: 2.345000
+STRING: Hi there
+----
+RUNNING: tests/list_algos_tests
+ALL TESTS PASSED
+Tests run: 2
+----
+RUNNING: tests/list_tests
+ALL TESTS PASSED
+Tests run: 6
+----
+RUNNING: tests/radixmap_tests
+ALL TESTS PASSED
+Tests run: 1

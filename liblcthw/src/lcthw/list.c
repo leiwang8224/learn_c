@@ -75,7 +75,7 @@ error:
 }
 
 // returns the first element of the list
-void *List_Shift(List *list) {
+void *List_shift(List *list) {
 	ListNode *node = list->first;
 	return node != NULL ? List_remove(list, node) : NULL;
 }
