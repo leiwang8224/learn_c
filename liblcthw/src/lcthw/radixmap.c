@@ -91,7 +91,7 @@ RMElement *RadixMap_find(RadixMap *map, uint32_t to_find) {
 }
 
 int RadixMap_add(RadixMap *map, uint32_t key, uint32_t value) {
-	check(key < UINT23_MAX, "key can't be equal to UINT32_MAX");
+	check(key < UINT32_MAX, "key can't be equal to UINT32_MAX");
 
 	RMElement element = {.data = {.key = key, .value = value} };
 	check(map->end + 1 < map->max, "RadixMap is full");

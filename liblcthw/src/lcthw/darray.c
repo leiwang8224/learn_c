@@ -1,4 +1,4 @@
-#include <darray.h>
+#include "lcthw/darray.h"
 #include <assert.h>
 
 DArray *DArray_create(size_t element_size, size_t initial_max) {
@@ -48,7 +48,7 @@ error:
 	return -1;
 }
 
-int DArray_expand(DArray &array) {
+int DArray_expand(DArray *array) {
 	size_t old_max = array->max;
 	check(DArray_resize(array, array->max + array->expand_rate) == 0, 
 						"Failed to expand array to new size: %d", 
