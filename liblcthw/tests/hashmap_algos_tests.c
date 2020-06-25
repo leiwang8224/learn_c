@@ -55,6 +55,8 @@ enum {ALGO_FNV1A, ALGO_ADLER32, ALGO_DJB};
 
 int gen_keys(DArray *keys, int num_keys) {
 	int i = 0;
+	// device folder which contains a better random number generator
+	// than rand
 	FILE *urand = fopen("/dev/urandom", "r");
 	check(urand != NULL, "failed to open /dev/urandom");
 	
