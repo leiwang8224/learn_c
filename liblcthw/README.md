@@ -1,3 +1,1 @@
-Exercise 32. Double Linked List
-next buffer
-more test
+On Ex46 Ternary Search Tree

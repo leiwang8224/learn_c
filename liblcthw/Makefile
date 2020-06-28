@@ -4,6 +4,9 @@ LDLIBS=$(COMMON_LIBS)
 LDFLAGS=$(OPTLIBS)
 PREFIX?=/usr/local
 
+PROGRAMS_SRC=$(wildcard bin/*.c)
+PROGRAMS=$(patsubst %.c,%,$(PROGRAMS_SRC))
+
 SOURCES=$(wildcard src/**/*.c src/*.c)
 OBJECTS=$(patsubst %.c,%.o,$(SOURCES))
 
@@ -47,6 +50,9 @@ clean:
 	rm -f tests/tests.log 
 	find . -name "*.gc*" -exec rm {} \;
 	rm -rf `find . -name "*.dSYM" -print`
+	rm -rf build $(OBJECTS) $(TESTS) $(PROGRAMS)
+all:
+	$(TARGET) $(SO_TARGET) tests $(PROGRAMS)
 
 # The Install
 install: all
@@ -58,3 +64,4 @@ check:
 	@echo Files with potentially dangerous functions.
 	@egrep '[^_.>a-zA-Z0-9](str(n?cpy|n?cat|xfrm|n?dup|str|pbrk|tok|_)|stpn?cpy|a?sn?printf|byte_)' $(SOURCES) || true
 
+$(PROGRAMS): CFLAGS+=$(TARGET)
